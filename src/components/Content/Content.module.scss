@@ -1,0 +1,29 @@
+.container {
+  max-width: 768px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  // half of the negative sum of the NewTask's input Y axis padding and the respective line height
+  // considering 1rem = 16px, it is ~27px;
+  margin-top: calc(-1 * (2rem + 1rem * 1.4) / 2); 
+
+}
+
+.tasks  {
+
+}
+
+.info {
+
+}
+
+.created {
+
+}
+
+.done {
+
+}
