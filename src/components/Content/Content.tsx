@@ -1,7 +1,18 @@
+import { TaskProps } from "../../@types";
+import { Counter } from "../Counter/Counter";
 import { NewTask } from "../NewTask/NewTask";
+import { TaskList } from "../TaskList/TaskList";
 import styles from "./Content.module.scss";
+import { v4 as uuidv4 } from "uuid";
 
 export const Content = () => {
+  const taskList: TaskProps[] = [
+    {
+      id: uuidv4(),
+      title: "Teste",
+      isDone: false,
+    },
+  ];
   return (
     <main className={styles.container}>
       <NewTask />
@@ -10,21 +21,14 @@ export const Content = () => {
         <div className={styles.info}>
           <span className={styles.created}>
             Tarefas criadas
-            <div className='counter'></div>
+            <Counter value={0} />
           </span>
           <span className={styles.done}>
             Concluídas
-            <div className='counter'></div>
+            <Counter value={0} />
           </span>
         </div>
-        <div className='task-list'></div>
-        <div className='task-list-empty'>
-          <img />
-          <span>
-            Você ainda não tem tarefas cadastradas Crie tarefas e organize seus
-            itens a fazer
-          </span>
-        </div>
+        <TaskList tasks={taskList} />
       </div>
     </main>
   );

@@ -12,18 +12,32 @@
 
 }
 
-.tasks  {
-
-}
-
 .info {
+  margin-top: 4rem;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .created {
+  color: var(--blue);
 
+  font-weight: 700;
+  font-size: 0.875rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
 .done {
+  color: var(--purple);
+  
+  font-weight: 700;
+  font-size: 0.875rem;
 
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }

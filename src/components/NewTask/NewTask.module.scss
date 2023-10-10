@@ -11,11 +11,15 @@
     background: var(--gray-500);
     color: var(--gray-100);
 
-    
     border-radius: 8px;
-    border: 0;
+    border: 1px solid var(--gray-700);
     
     padding: 1rem;
+
+    &:focus-within {
+      box-shadow: none;
+      border-color: var(--purple-dark);
+    }
 
     &::placeholder, &::-webkit-input-placeholder {
       color: var(--gray-300);
@@ -23,6 +27,8 @@
   }
 
   button {
+    cursor: pointer;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,10 +47,13 @@
 
     &:hover {
       background: var(--blue);
-
-      
     }
 
     transition: background-color 0.1s ease-in-out; 
   }
+}
+
+.plus-icon {
+  width: 1rem;
+  height: 1rem;
 }
