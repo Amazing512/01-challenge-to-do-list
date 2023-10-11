@@ -1,0 +1,48 @@
+
+.checkbox {
+  cursor: pointer;
+
+  background: transparent;
+  color: transparent;
+
+  border: none;
+  font-size: 0;
+  
+  border-radius: 999px;
+
+  svg {
+    padding: 0.075rem;
+    width: 1.125rem;
+    height: 1.125rem;
+
+    border-radius: 999px;
+    border: 2px solid var(--blue);
+
+    transition: 0.2s border-color;
+  }
+
+  
+  &:hover {
+    background: color-mix(in srgb, var(--blue-dark) 20%, transparent);
+  }
+
+
+  &[data-active="true"] {
+    background: var(--purple-dark);
+
+    svg {
+      color: var(--gray-100);
+      border-color: var(--purple-dark);
+    }
+
+    &:hover {
+      background: var(--purple);
+
+      svg {
+        border-color: var(--purple);
+      }
+    }
+  }
+  
+  transition: 0.2s background-color;
+}
