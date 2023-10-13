@@ -1,9 +1,14 @@
 import styles from "./Counter.module.scss";
 
 interface CounterProps {
-  value: number;
+  current: number;
+  max?: number;
 }
 
-export const Counter = ({ value }: CounterProps) => {
-  return <div className={styles.counter}>{value}</div>;
+export const Counter = ({ current, max }: CounterProps) => {
+  return (
+    <div className={styles.counter}>{`${current}${
+      max ? ` de ${max}` : ""
+    }`}</div>
+  );
 };

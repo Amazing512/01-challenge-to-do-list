@@ -24,12 +24,12 @@ export const Content = () => {
 
   const handleCreateTask = (title: string) => {
     setTaskList((taskList) => [
-      ...taskList,
       {
         id: uuidv4(),
         title,
         isDone: false,
       },
+      ...taskList,
     ]);
   };
 
@@ -41,14 +41,14 @@ export const Content = () => {
         <div className={styles.info}>
           <span className={styles.created}>
             Tarefas criadas
-            <Counter value={taskList.length} />
+            <Counter current={taskList.length} />
           </span>
           <span className={styles.done}>
             Concluídas
-            <Counter value={tasksDone} />
+            <Counter current={tasksDone} max={taskList.length} />
           </span>
         </div>
-        <TaskList tasks={taskList} />
+        <TaskList tasks={taskList} setTasks={setTaskList} />
       </div>
     </main>
   );
